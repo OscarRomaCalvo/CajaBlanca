@@ -18,7 +18,12 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/jgm001/ownCloud/V&amp;V/Curso 2022-2023/Prácticas/Caja Blanca/SingleList.jar"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="module" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/oscar/Mi unidad/Universidad/CuartoCurso/PrimerSemestre/VV/PracticaCajaBlanca/202223-caja-blanca/SingleList.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
