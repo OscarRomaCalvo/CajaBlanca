@@ -9,17 +9,23 @@ import com.cajanegra.EmptyCollectionException;
 public class prueba {
 	public static void main (String[] args) throws EmptyCollectionException {
 		Editor editor = new Editor();
-		editor.cargarEditor("resources/practica.txt");
-		AbstractSingleLinkedListImpl<String> lista = editor.getLinea(1);
-		boolean iguales = true;
-		ArrayList aux = new ArrayList();
-		aux.add("Hola");
-		int i=0;
-		Iterator iterator = lista.iterator();
-		String a=null;
-		while(iterator.hasNext()) {
-			a=(String) iterator.next();
-			System.out.println(a);
+		editor.cargarEditor("resources/lineaVacia.txt");
+		int numPalabras = 0;
+		int tamanio = editor.size();
+		int i;
+		AbstractSingleLinkedListImpl<String> lista = null;
+		if (tamanio > 0) {
+			i = 1;
+			while (i <= tamanio) {
+				lista = editor.getLinea(i);
+				for (String s : lista) {
+					System.out.println("HOLA");
+					if(s.length()>0)
+						numPalabras++;
+				}
+				i++;
+			}
 		}
+		System.out.println(numPalabras);
 	}
 }
