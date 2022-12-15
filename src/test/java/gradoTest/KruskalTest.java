@@ -11,8 +11,8 @@ import org.junit.jupiter.api.Test;
 import com.cajablanca.grafo.Grafo;
 
 class KruskalTest {
-	private final PrintStream standardOut = System.out;
-	private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+	private PrintStream standardOut = System.out;
+	private ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
 	@BeforeEach
 	public void setUp() {
@@ -28,14 +28,38 @@ class KruskalTest {
 	}
 	
 	@Test
-	void kruskalTest3() {
-		Grafo g = new Grafo();
-		g.addVertice(0);
-		g.addVertice(1);
+	void kruskalTest5a() {
+		Grafo g = new Grafo("resources/Grafo/grafo3vertices.txt");
+		
 		Grafo resul = g.kruskal();
 		resul.printGraph();
-		assertEquals(outputStreamCaptor.toString().trim(), "");
+		String resulString=outputStreamCaptor.toString();
+		
+		outputStreamCaptor = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outputStreamCaptor));
+		g.printGraph();
+		String gString=outputStreamCaptor.toString();
+		
+		assertEquals(resulString, gString);
 	}
+	
+	@Test
+	void kruskalTest7() {
+		Grafo g = new Grafo("resources/Grafo/grafo2vertices.txt");
+		
+		Grafo resul = g.kruskal();
+		resul.printGraph();
+		String resulString=outputStreamCaptor.toString();
+		
+		outputStreamCaptor = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outputStreamCaptor));
+		g.printGraph();
+		String gString=outputStreamCaptor.toString();
+		
+		assertEquals(resulString, gString);
+	}
+	
+
 	
 	
 
