@@ -20,4 +20,11 @@ class ExistePalabraTest {
 		editor.cargarEditor("resources/unaPalabra.txt");
 		assertFalse(editor.existePalabra("Melocoton"));
 	}
+	
+	@Test
+	void existePalabraTest5() {
+		Editor editor = new Editor();
+		editor.cargarEditor("resources/unaPalabra.txt");
+		assertTrue(editor.existePalabra("caca"));
+	}
 }
